@@ -1,0 +1,35 @@
+#include<stdio.h>
+int num[520][520];
+int main()
+{
+int K,N,p=1,b=1,v,a,sum[1314];
+char str[520][20];
+scanf("%d",&K);
+for(;p<=K;p++)
+{
+scanf("%s%d",str[a],&a);
+for(;b<=K;b++)
+{
+if(b==a)
+scanf("%d",&num[a][b]);
+}
+}
+scanf("%d",&N);
+for(;a<=N;a++)
+{
+scanf("%d",&sum[a]);
+}
+for(;a<=N;a++)
+{
+for(;b<=K;b++)
+{
+if(num[b][sum[a]]!=0)
+{
+v=b;
+break;
+}
+}
+printf("%s ",str[V]);
+printf("%d\n",num[V][sum[a]]);
+}
+}
