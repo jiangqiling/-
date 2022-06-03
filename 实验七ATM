@@ -1,0 +1,123 @@
+#include<stdio.h>
+ struct Account
+{
+	
+	char name[100];
+	char tel[12];
+	char Idcard[19];
+	char Username[100];
+	char password[7];
+	float money;
+	
+};
+
+typedef struct Account Account;
+
+void showChinese()
+{
+	printf("按1,开户\n");
+	printf("按2,登录\n");
+
+}
+
+void showEnglish()
+{
+	printf("Press 1 , Sign Up\n");
+	printf("Press 2 , Sign In\n");
+	
+}
+
+Account a;
+void signUp()
+{
+	printf("请输入你的姓名:\n");
+	scanf("%s,a.name");
+	
+	printf("请输入你的电话:\n");
+	scanf("%s,a.tel");
+	
+	printf("请输入你的身份证:\n");
+	scanf("%s,a.Idcard");
+	
+	printf("请设置账号:\n");
+	scanf("%s,a.Uesrname");
+	
+	printf("请设置密码:\n");
+	scanf("%s,a.password");
+	
+	a.money=0.0f;
+	
+	printf("恭喜你，完成注册！\n");
+	
+}
+
+void Englishsignup()
+{
+	printf("Please enter your name:\n");
+	scanf("%s,a.name");
+	
+	printf("Please enter your tel:\n");
+	scanf("%s",a.tel);
+	
+	printf("Please enter your Idcard:\n");
+	scanf("%s",a.Idcard);
+	
+	printf("Please enter your account:\n");
+	scanf("%s",a.Username);
+	
+	printf("Please enter your password:\n");
+	scanf("%s",a.password);
+	
+	a.money=0.0f;
+	
+	printf("Finish it !\n");
+}
+
+void Signin()
+{
+	
+	
+}
+
+void printAccount(Account a)
+{
+	printf("%s %s %s %s %f\n",a.name,a.tel,a.Idcard,a.Username,a.money);
+}
+
+int main()
+{
+	printf("按1，中文显示\n");
+	printf("Press 2 ,Show English\n");
+	int n;
+	scanf("%d",&n);
+	if(n==1)
+	{
+		showChinese();
+	}
+	else if(n==2)
+	{
+		showEnglish();
+	}
+	
+	int k;
+	scanf("%d",&k);
+	if(k==1)
+	{
+		if(n==2)
+		{
+			Englishsignup();
+			printAccount(a);
+		}
+		else if(n==1)
+		{
+			signUp();
+			printAccount(a);
+		}
+	}
+	else if(k==2)
+	{
+		Signin();
+	}
+	
+	return 0;
+}
