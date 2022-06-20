@@ -3,7 +3,7 @@
 #include<string.h>
 #include<time.h>
 #include<conio.h>
-int Y;
+int Y;//全局变量，用于语言选择 
 int language()
 {
 	int m;
@@ -36,7 +36,7 @@ typedef struct Account Account;
 Account *head = NULL;
 Account *tail = NULL;
 
-void getpasswd(Account* pa)
+void getpasswd(Account* pa)//密码遮掩，防偷看 
 {
 	
 
@@ -85,7 +85,7 @@ typedef struct TransactionRecord TR;
 TR * trHead = NULL;
 TR * trTail = NULL;
 
-void addNodeTR(TR *oNode)//TR链表的连接
+void addNodeTR(TR *oNode)//TR链表的连接，用于交易记录的写入 
 {
 	oNode->next = NULL;
 	if (trHead == NULL)
@@ -101,10 +101,10 @@ void addNodeTR(TR *oNode)//TR链表的连接
 }
 
 
-int init()
+int init()  //数据加载 
 {
-	FILE* fp = fopen("D:\\VS2015\\atm.txt", "r");
-	FILE* fp2=fopen("D:\\VS2015\\transation_record.txt", "r");
+	FILE* fp = fopen("D:\\atm.txt", "r");
+	FILE* fp2=fopen("D:\\transation_record.txt", "r");
 	if ((fp == NULL)&&(fp2==NULL))
 	{
 		return 0;
@@ -303,7 +303,7 @@ void updatePassword()//密码修改函数
 	
 }
 
-void homePage()
+void homePage()//清屏 
 {
 	system("cls");
 	updatePassword();
@@ -421,7 +421,7 @@ Account * findOtherAccount(char otherUsername[])
 }
 
 
-void transfer()
+void transfer()//转账 
 {
 	if (Y)
 	{
@@ -623,8 +623,8 @@ void signIn() //登录函数
 
 int main()
 {
-	printf("---【1】中文\Chinese---\n");
-	printf("---【0】英文\English---\n");
+	printf("---【1】中文\ Chinese---\n");
+	printf("---【0】英文\ English---\n");
 	Y=language();
 
 	int q = init();
